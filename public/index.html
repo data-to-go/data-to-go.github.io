@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <link rel="icon" href="%PUBLIC_URL%/logo-light.jpeg" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+    <link rel="icon" href="%PUBLIC_URL%/logo-dark.jpeg" media="(prefers-color-scheme: dark)">    
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -24,6 +27,29 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <script>
+      function updateFavicon() {
+        // Determine the preferred color scheme and set the appropriate favicon
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const favicon = document.querySelector('link[rel="icon"]');
+        
+        if (prefersDarkMode) {
+          console.log('dark');
+          favicon.href = '%PUBLIC_URL%/logo_black.png';
+        } else {
+          console.log('light');
+          favicon.href = '%PUBLIC_URL%/logo_white.png';
+        }
+      }
+    
+      // Run the function to update the favicon
+      updateFavicon();
+    
+      // Optional: Add an event listener to react to changes in color scheme preference
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    </script>
+    
     <title>DataToGo: Data & Tech</title>
   </head>
   <body>
