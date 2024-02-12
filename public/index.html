@@ -34,10 +34,8 @@
         const favicon = document.querySelector('link[rel="icon"]');
         
         if (prefersDarkMode) {
-          console.log('dark');
           favicon.href = '%PUBLIC_URL%/logo-dark.png';
         } else {
-          console.log('light');
           favicon.href = '%PUBLIC_URL%/logo-light.png';
         }
       }
