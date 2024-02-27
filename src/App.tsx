@@ -6,8 +6,6 @@ function App() {
   console.log('Welcome my lovely hacker, if you are interested in a job, we have a lot of interesting tasks for you! \r\nContact us %chr@datatogo.uk', 
   'color: blue;');
 
-  console.log('Contact us hr@datatogo.uk');
-
   return (
     <div className="App">
       <header className="App-header">
