@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SOURCES = [
-  { label: 'Websites',       icon: '🌐', y: 20,  color: '#38bdf8' },
+  { label: 'Websites',       icon: '🌐', y: 20,  color: '#00e676' },
   { label: 'Mobile Apps',    icon: '📱', y: 70,  color: '#818cf8' },
   { label: 'Public APIs',    icon: '⚡', y: 120, color: '#34d399' },
   { label: 'IoT Devices',    icon: '🔌', y: 170, color: '#fb923c' },
@@ -106,7 +106,7 @@ const DataFlowDiagram: React.FC = () => (
       {[0, 1].map(i => (
         <circle
           key={i} cx={HX} cy={HY} r={HR}
-          fill="none" stroke="#38bdf8" strokeWidth="1" opacity="0"
+          fill="none" stroke="#00e676" strokeWidth="1" opacity="0"
         >
           <animate
             attributeName="r" values={`${HR};${HR + 22}`}
@@ -122,17 +122,17 @@ const DataFlowDiagram: React.FC = () => (
       {/* Hub body */}
       <circle
         cx={HX} cy={HY} r={HR}
-        fill="rgba(56,189,248,0.07)"
-        stroke="#38bdf8" strokeWidth="1.5" strokeOpacity="0.75"
+        fill="rgba(0,230,118,0.07)"
+        stroke="#00e676" strokeWidth="1.5" strokeOpacity="0.75"
         filter="url(#hub-glow)"
       />
-      <circle cx={HX} cy={HY} r="30" fill="rgba(56,189,248,0.11)" />
+      <circle cx={HX} cy={HY} r="30" fill="rgba(0,230,118,0.11)" />
 
       {/* Hub label */}
       <text
         x={HX} y={HY + 6}
         textAnchor="middle"
-        fill="#38bdf8" fontSize="15" fontWeight="700"
+        fill="#00e676" fontSize="15" fontWeight="700"
         fontFamily="Inter, sans-serif"
       >
         DATA

@@ -60,12 +60,13 @@ function App() {
 
   return (
     <div className="app">
+      <div className="scanlines" aria-hidden="true" />
 
       {/* NAV */}
       <nav className={`nav${scrolled ? ' nav-scrolled' : ''}`}>
         <div className="nav-inner">
           <a href="#hero" className="nav-logo">
-            DataToGo<span className="accent">.</span>
+            <span className="nav-prompt">&gt;_</span> DataToGo
           </a>
           <div className={`nav-links${menuOpen ? ' open' : ''}`}>
             <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
@@ -89,10 +90,20 @@ function App() {
         <div className="hero-grid-bg" aria-hidden="true" />
         <div className="hero-inner">
           <div className="hero-content">
+            <div className="hero-prompt" aria-hidden="true">
+              <span className="prompt-user">root</span>
+              <span className="prompt-at">@</span>
+              <span className="prompt-host">datatogo</span>
+              <span className="prompt-sep">:</span>
+              <span className="prompt-dir">~/collect</span>
+              <span className="prompt-char">$</span>
+              <span className="prompt-cmd">./extract --target=web --ethics=strict --fmt=any</span>
+            </div>
             <div className="hero-badge">Data Infrastructure for the Modern Stack</div>
             <h1>
               Your data.<br />
-              <span className="accent">On demand.</span>
+              <span className="accent glitch" data-text="On demand.">On demand.</span>
+              <span className="cursor" aria-hidden="true" />
             </h1>
             <p className="hero-sub">
               We extract, engineer, and deliver clean data at scale - so startups and
@@ -170,7 +181,7 @@ function App() {
               'Source Attribution',
             ].map(item => (
               <div className="why-card" key={item}>
-                <span className="why-icon">✓</span>
+                <span className="why-icon">[+]</span>
                 {item}
               </div>
             ))}
